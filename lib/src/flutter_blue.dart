@@ -282,6 +282,7 @@ class AdvertisementData {
   final Map<int, List<int>> manufacturerData;
   final Map<String, List<int>> serviceData;
   final List<String> serviceUuids;
+  final Uint8List rawData;
 
   AdvertisementData(
       {this.localName,
@@ -289,7 +290,8 @@ class AdvertisementData {
       this.connectable,
       this.manufacturerData,
       this.serviceData,
-      this.serviceUuids});
+      this.serviceUuids,
+      this.rawData});
 
   AdvertisementData.fromProto(protos.AdvertisementData p)
       : localName = p.localName,
@@ -298,7 +300,8 @@ class AdvertisementData {
         connectable = p.connectable,
         manufacturerData = p.manufacturerData,
         serviceData = p.serviceData,
-        serviceUuids = p.serviceUuids;
+        serviceUuids = p.serviceUuids,
+        rawData = p.rawData;
 
   @override
   String toString() {

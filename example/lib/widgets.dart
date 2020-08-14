@@ -115,6 +115,8 @@ class ScanResultTile extends StatelessWidget {
                 : 'N/A'),
         _buildAdvRow(context, 'Service Data',
             getNiceServiceData(result.advertisementData.serviceData) ?? 'N/A'),
+        _buildAdvRow(context, 'Raw Data',
+            '${result.advertisementData.rawData}' ?? 'N/A'),
       ],
     );
   }
