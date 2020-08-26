@@ -292,7 +292,7 @@ class AdvertisementData {
       this.serviceData,
       this.serviceUuids,
       this.rawData});
-
+ 
   AdvertisementData.fromProto(protos.AdvertisementData p)
       : localName = p.localName,
         txPowerLevel =
@@ -301,7 +301,7 @@ class AdvertisementData {
         manufacturerData = p.manufacturerData,
         serviceData = p.serviceData,
         serviceUuids = p.serviceUuids,
-        rawData = p.rawData;
+        rawData = (Platform.isAndroid) ? p.rawData : null;
 
   @override
   String toString() {
