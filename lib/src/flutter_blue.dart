@@ -75,9 +75,11 @@ class FlutterBlue {
   }
 
   _setLogLevelIfAvailable() async {
-    if (await isAvailable) {
-      // Send the log level to the underlying platforms.
-      setLogLevel(logLevel);
+    if(Platform.isAndroid) {
+      if (await isAvailable) {
+        // Send the log level to the underlying platforms.
+        setLogLevel(logLevel);
+      }
     }
   }
 
